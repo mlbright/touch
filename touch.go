@@ -4,21 +4,21 @@ import (
 	"flag"
 	"log"
 	"os"
-    "time"
+	"time"
 )
 
 func touch(path string) {
 	if _, err := os.Stat(path); err != nil {
-        if os.IsNotExist(err) {
-            if _, err := os.Create(path); err != nil {
-                log.Fatal(err)
-            }
-        } else {
-            log.Fatal(err)
-        }
+		if os.IsNotExist(err) {
+			if _, err := os.Create(path); err != nil {
+				log.Fatal(err)
+			}
+		} else {
+			log.Fatal(err)
+		}
 	} else {
-        now := time.Now()
-        os.Chtimes(path,now,now)
+		now := time.Now()
+		os.Chtimes(path, now, now)
 	}
 }
 
