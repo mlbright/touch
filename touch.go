@@ -19,8 +19,8 @@ func touch(path string) {
 	} else {
 		now := time.Now()
 		if err := os.Chtimes(path, now, now); err != nil {
-            log.Fatal(err)
-        }
+			log.Fatal(err)
+		}
 	}
 }
 
